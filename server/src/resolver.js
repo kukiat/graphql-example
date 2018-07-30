@@ -38,7 +38,10 @@ const resolvers = {
       const newReview = {
         id: reviews.length,
         title: args.title,
-        author: args.author
+        author: args.author,
+        name: args.name,
+        created: String(Date.now()),
+        comments: []
       }
       reviews.push(newReview)
       return newReview
