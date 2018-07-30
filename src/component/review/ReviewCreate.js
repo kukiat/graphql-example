@@ -6,7 +6,6 @@ import { reviewsMutation } from './Review'
 
 const InputText = styled.input`
   margin-top: 10px;
-  width: 300px !important;
   height: 32px !important;
 `
 

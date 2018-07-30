@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
 import '../style/App.css';
-import Review from './review/Review'
-import ReviewCreate from './review/ReviewCreate'
+import { BrowserRouter } from 'react-router-dom'
+import Router from '../router';
 
 class App extends Component {
   render() {
     return (
-      <div className="container">
-        <ReviewCreate/>
-        <div className="row"> 
-          <div className="col-md-6 review">
-            <Review/>
-          </div>
+      <BrowserRouter>
+        <div className="container">
+          <Router/>
         </div>
-      </div>
+      </BrowserRouter>
     );
   }
 }
