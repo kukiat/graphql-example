@@ -6,7 +6,6 @@ import ReviewList from './ReviewItem'
 
 class Review extends React.Component {
   render() {
-    console.log(this.props.data)
     return (
       this.props.data.loading ? 
         <div>Loading...</div> :
@@ -17,8 +16,8 @@ class Review extends React.Component {
   }
 }
 
-export const queryReviews = gql`
-  {
+export const reviewsMutation = gql`
+  query ReviewList {
     reviews {
       title
       id
@@ -26,4 +25,4 @@ export const queryReviews = gql`
   }
 `
 
-export default graphql(queryReviews)(Review)
+export default graphql(reviewsMutation)(Review)

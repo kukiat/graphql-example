@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import gql from 'graphql-tag'
 import { graphql } from 'react-apollo'
-import { queryReviews } from './Review'
+import { reviewsMutation } from './Review'
 
 const InputText = styled.input`
   margin-top: 10px;
@@ -31,7 +31,7 @@ class ReviewCreate extends React.Component {
     e.preventDefault()
     this.props.mutate({
       variables: { name, title, author },
-      refetchQueries: [{ query: queryReviews }]
+      refetchQueries: [{ query: reviewsMutation }]
     })
     this.setState({ name: '', title: '', author: '' })
   }
@@ -43,7 +43,6 @@ class ReviewCreate extends React.Component {
   }
 
   render() {
-    console.log('render')
     return (
       <div>
         <form onSubmit={this.onSubmit}>
@@ -57,7 +56,7 @@ class ReviewCreate extends React.Component {
   }
 }
 
-const query = gql`
+const addReviewMutation = gql`
   mutation AddReview($name: String!, $title: String!, $author: String) {
     addReview(name: $name, title: $title, author: $author) {
       title
@@ -65,4 +64,4 @@ const query = gql`
   }
 `
 
-export default graphql(query)(ReviewCreate)
+export default graphql(addReviewMutation)(ReviewCreate)

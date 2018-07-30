@@ -5,12 +5,15 @@ const ReviewItem = styled.div`
   background-color: #FFF;
   border: 1px solid #FFF;
   margin-top: 9px;
-  height: 50px;
+  height: 40px;
   border-radius: 5px;
   cursor: pointer;
   padding-top: 10px;
   .review-title {
-    font-size: 25px;
+    font-size: 15px;
+  }
+  &:hover {
+    background-color: #F2F2F2;
   }
 `;
 
