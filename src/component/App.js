@@ -7,8 +7,8 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <div className="row">
-          <ReviewCreate/>
+        <ReviewCreate/>
+        <div className="row"> 
           <div className="col-md-6 review">
             <Review/>
           </div>
