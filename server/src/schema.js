@@ -6,6 +6,7 @@ const typeDefs = `
     id: ID!
     title: String!
     author: String
+    name: String!
     created: String!
     comments: [Comment]
   }

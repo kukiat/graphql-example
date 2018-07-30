@@ -4,6 +4,7 @@ const reviews = [
     title: 'Harray Potter',
     author: 'JK Rolling',
     created: '1532907934111',
+    name: 'kukiat',
     comments: [
       { id: 0, name: 'messi', description: 'good book so good so good.', created: '1532907934790' },
       { id: 3, name: 'messiwdw', description: 'I like it.', created: '1532908005505' },
@@ -15,6 +16,7 @@ const reviews = [
     title: 'One Piece',
     author: 'Oda',
     created: '1532907934100',
+    name: 'kelvin',
     comments: [
       { id: 1, name: 'kuroky', description: 'I like it so much.', created: '1532908093140' },
       { id: 2, name: 'puppey', description: 'I hate this book..', created: '1532908093149' },
