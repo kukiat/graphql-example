@@ -5,6 +5,8 @@ const cors = require('cors')
 const schema = require('./src/schema')
 const app = express()
 
+const db = require('./utils/connect')
+
 const PORT = process.env.PORT || 3001
 
 app.use(cors({ origin: `http://localhost:3000` }))

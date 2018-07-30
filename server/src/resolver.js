@@ -23,18 +23,18 @@ const reviews = [
     ]
   }
 ]
-
+// mongodb://<dbuser>:<dbpassword>@ds117271.mlab.com:17271/review
 const resolvers = {
   Query: {
     reviews: () => {
       return reviews
     },
-    review: (parent, args) => {
+    review: (root, args) => {
       return reviews[args.id]
     }
   },
   Mutation: {
-    addReview: (parent, args) => {
+    addReview: (root, args) => {
       const newReview = {
         id: reviews.length,
         title: args.title,
