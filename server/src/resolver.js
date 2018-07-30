@@ -1,4 +1,3 @@
-const ReviewModel = require('../model/review')
 const { getAllReview, getReviewById, addReview } = require('../controller/reviewController')
 
 const resolvers = {
@@ -21,9 +20,9 @@ const resolvers = {
     }
   },
   Mutation: {
-    addReview: async (root, { title, name, author }) => {
+    addReview: async (root, { title, name, detail }) => {
       try {
-        const review = await addReview({ title, name, author })
+        const review = await addReview({ title, name, detail })
         return review
       }catch(err) {
         console.log(err)

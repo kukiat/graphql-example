@@ -5,7 +5,7 @@ const typeDefs = `
   type Review {
     id: ID!
     title: String!
-    author: String
+    detail: String!
     name: String!
     created: String!
     comments: [Comment]
@@ -21,7 +21,7 @@ const typeDefs = `
     review(id: ID!): Review
   }
   type Mutation {
-    addReview(title: String!, name: String!, author: String): Review
+    addReview(title: String!, name: String!, detail: String!): Review
   }
   schema {
     query: Query,

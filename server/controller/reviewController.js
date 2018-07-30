@@ -7,9 +7,9 @@ const getAllReview = () => {
         const allReviews = reviews.map(review => ({
           id: review.id,
           title: review.title,
-          author: review.author,
           name: review.name,
           comments: review.comments,
+          detail: review.detail,
           created: "4545"
         }))
         resolve(allReviews)
@@ -25,7 +25,7 @@ const getReviewById = (id) => {
       .then(review => resolve({
         id: review.id,
         title: review.title,
-        author: review.author,
+        detail: review.detail,
         name: review.name,
         comments: review.comments,
         created: "4545"
@@ -34,12 +34,12 @@ const getReviewById = (id) => {
   })
 }
 
-const addReview = ({ title, author, name }) => {
+const addReview = ({ title, author, name, detail }) => {
   return new Promise((resolve, reject) => {
     const newReview = new ReviewModel({
       title,
-      author,
       name,
+      detail,
       created: Date.now(),
       comments: []
     })
@@ -47,8 +47,8 @@ const addReview = ({ title, author, name }) => {
       .then(review => resolve({
         id: review.id,
         title: review.title,
-        author: review.author,
         name: review.name,
+        detail: review.detail,
         comments: review.comments,
         created: "4545"
       }))

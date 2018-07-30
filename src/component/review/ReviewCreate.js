@@ -23,17 +23,17 @@ class ReviewCreate extends React.Component {
   state = {
     name: '',
     title: '',
-    author: ''
+    detail: ''
   }
 
   onSubmit = (e) => {
-    const { name, title, author } = this.state
+    const { name, title, detail } = this.state
     e.preventDefault()
     this.props.mutate({
-      variables: { name, title, author },
+      variables: { name, title, detail },
       refetchQueries: [{ query: reviewsMutation }]
     })
-    this.setState({ name: '', title: '', author: '' })
+    this.setState({ name: '', title: '', detail: '' })
   }
 
   onInputChange = (e) => {
@@ -47,7 +47,7 @@ class ReviewCreate extends React.Component {
       <div>
         <form onSubmit={this.onSubmit}>
           <InputText className="form-control" onChange={this.onInputChange} name="title" value={this.state.title} type="text" placeholder="title"/>
-          <InputText className="form-control" onChange={this.onInputChange} name="author" value={this.state.author} type="text" placeholder="author"/>
+          <InputText className="form-control" onChange={this.onInputChange} name="detail" value={this.state.detail} type="text" placeholder="detail"/>
           <InputText className="form-control" onChange={this.onInputChange} name="name" value={this.state.name} type="text" placeholder="name"/>
           <ButtonSubmit type="submit" className="btn">Submit</ButtonSubmit>
         </form>
@@ -57,8 +57,8 @@ class ReviewCreate extends React.Component {
 }
 
 const addReviewMutation = gql`
-  mutation AddReview($name: String!, $title: String!, $author: String) {
-    addReview(name: $name, title: $title, author: $author) {
+  mutation AddReview($name: String!, $title: String!, $detail: String!) {
+    addReview(name: $name, title: $title, detail: $detail) {
       title
     }
   }
