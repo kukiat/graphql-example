@@ -5,10 +5,12 @@ import { graphql } from 'react-apollo'
 import { reviewsMutation } from './Review'
 
 const InputText = styled.input`
-  margin-top: 10px;
   height: 32px !important;
 `
-
+const TextArea = styled.textarea`
+  margin-top: 10px;
+  height: 150px !important;
+`
 const ButtonSubmit = styled.button`
   background-color: #FF672B;
   color: #FFF;
@@ -46,7 +48,7 @@ class ReviewCreate extends React.Component {
       <div>
         <form onSubmit={this.onSubmit}>
           <InputText className="form-control" onChange={this.onInputChange} name="title" value={this.state.title} type="text" placeholder="title"/>
-          <InputText className="form-control" onChange={this.onInputChange} name="detail" value={this.state.detail} type="text" placeholder="detail"/>
+          <TextArea row="5" className="form-control" onChange={this.onInputChange} name="detail" value={this.state.detail} type="text" placeholder="detail"/>
           <InputText className="form-control" onChange={this.onInputChange} name="name" value={this.state.name} type="text" placeholder="name"/>
           <ButtonSubmit type="submit" className="btn">Submit</ButtonSubmit>
         </form>

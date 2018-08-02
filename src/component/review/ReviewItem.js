@@ -5,7 +5,7 @@ const ReviewItem = styled.div`
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   background-color: #FFF;
   border: 1px solid #FFF;
-  margin-top: 9px;
+  margin-bottom: 9px;
   height: 40px;
   border-radius: 5px;
   cursor: pointer;
